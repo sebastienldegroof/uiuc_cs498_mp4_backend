@@ -150,8 +150,5 @@ def fetch_data_from_db():
         logging.exception(f"Failed to get data: {str(e)}")
 
 
-    raise NotImplementedError("Database fetch function not implemented.")
-
-
 if __name__ == "__main__":
     application.run(host="0.0.0.0", port=5000)
