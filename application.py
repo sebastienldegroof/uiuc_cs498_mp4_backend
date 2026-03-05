@@ -114,6 +114,7 @@ def insert_data_into_db(payload):
     Implement this function to insert the data into the database.
     NOTE: Our autograder will automatically insert data into the DB automatically keeping in mind the explained SCHEMA, you dont have to insert your own data.
     """
+    create_db_table()
     connection = get_db_connection()
     try:
         with get_db_connection() as connection:
@@ -151,5 +152,4 @@ def fetch_data_from_db():
 
 
 if __name__ == "__main__":
-    create_db_table()
     application.run(host="0.0.0.0", port=5000)
