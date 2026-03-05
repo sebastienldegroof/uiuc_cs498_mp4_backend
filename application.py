@@ -123,6 +123,7 @@ def insert_data_into_db(payload):
                 INSERT INTO events
                 VALUES (0, {payload["title"], payload["description"], payload["image_url"], payload["date"], payload["location"]});
                 """
+                logging.info(f"SQL statement: {insert_data_sql}")
                 cursor.execute(insert_data_sql)
             connection.commit()
             logging.info("Insert data into table")
