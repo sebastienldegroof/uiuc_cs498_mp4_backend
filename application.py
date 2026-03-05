@@ -147,8 +147,16 @@ def fetch_data_from_db():
                 """
                 cursor.execute(get_data_sql)
                 data = cursor.fetchall()
-            return data
             logging.info("Get data from table")
+        res = []
+        for row in data:
+            res.append({
+                'date': row[4],
+                'title': row[1],
+                'description': row[2],
+                'location': row[5]
+                })
+        return res
     except Exception as e:
         logging.exception(f"Failed to get data: {str(e)}")
 
