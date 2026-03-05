@@ -145,7 +145,8 @@ def fetch_data_from_db():
                 SELECT * FROM events
                 ORDER BY date ASC
                 """
-                data = cursor.fetchall(get_data_sql)
+                cursor.execute(get_data_sql)
+                data = cursor.fetchall()
             return data
             logging.info("Get data from table")
     except Exception as e:
