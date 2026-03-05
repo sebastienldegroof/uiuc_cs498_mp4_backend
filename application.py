@@ -121,7 +121,7 @@ def insert_data_into_db(payload):
             with connection.cursor() as cursor:
                 insert_data_sql = f"""
                 INSERT INTO events
-                VALUES ({payload["title"], payload["description"], payload["image_url"], payload["date"], payload["location"]});
+                VALUES (0, {payload["title"], payload["description"], payload["image_url"], payload["date"], payload["location"]});
                 """
                 cursor.execute(insert_data_sql)
             connection.commit()
